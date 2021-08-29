@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kubernetesdemo
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: kubernetesdemo
+    spec:
+      containers:
+        - name: kubernetesdemo
+          image: 'gcr.io/sustained-path-320408/kubernetesdemo:v1'
+          ports:
+            - containerPort: 8080
